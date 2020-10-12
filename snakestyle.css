@@ -1,0 +1,44 @@
+
+.snakebody {background-color: greenyellow; 
+border: pink;
+}
+
+html, body {
+text-align: center;
+font-family: arial;
+padding: 0;
+margin: 0;
+}
+    
+table {
+border: 1px;
+border-collapse: collapse;
+margin: auto;
+}
+    
+td {
+height: 50px;
+width: 50px;
+min-width: 50px;
+min-height: 50px;
+max-width: 50px;
+max-height: 50px;
+border-style: solid;
+border-color: black;
+background-color: grey;
+}
+    
+
+.snakehead {
+background-color: green;
+
+}
+.snakefood {
+background-color: red;
+}
+
+#Score {
+text-align: center;
+font-family: arial;
+
+}
