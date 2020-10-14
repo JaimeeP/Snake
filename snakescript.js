@@ -151,4 +151,4 @@ if (document.getElementById(headposnew).classList.contains('snakebody') === true
 function verkackt() {
 if (hy == 'z0' || hy === 'z16' || hx == 's0' || hx === 's16') {alert('Verloren');location.reload();} 
 if (sneklength >= 120) {alert('You are winner')}
-} //Jez gehts ab
+} 
