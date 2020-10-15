@@ -22,14 +22,10 @@ let Up = 1, Left = 0, Right = 0, Down = 0;
 let movetime = 0
 let gamespeed = 200;
 let gamespeedfieldpersecond = 1000 / gamespeed;
-let gemsped
-let turbogemsped
 let gamestarted = 0;
-let constsecond = 1000;
-let constturbosecond = 500;
 let second = 1000;
 let dorito 
-let speedup
+
 var timedID
 var xs
 
@@ -53,22 +49,17 @@ function startgame() {
 }
 
 
-document.addEventListener('keydown', boost);
-document.addEventListener('keyup', unboost);
-function   boost(event) {if (event.keyCode === 16) {speedup = '1'}}
-function unboost(event) {if (event.key === 'Shift') {speedup = '0';}}
 
 function gameSpeed(dorito) {
   clearInterval(timedID)
   if (dorito === 'high') {gamespeedfieldpersecond++}
   if (dorito === 'low')  {gamespeedfieldpersecond--}
-  if (speedup === '1') {second = constturbosecond}
-  if (speedup === '0') {second = constsecond}
-  if (sneklength == '30' && xs === undefined) {second = second * 0.85; constsecond = constsecond * 0.85; constturbosecond = constturbosecond * 0.85; xs = 1}
-  if (sneklength == '60' && xs === 1) {second = second * 0.85; constsecond = constsecond * 0.85; constturbosecond = constturbosecond * 0.85; xs++}
-  if (sneklength == '90' && xs === 2) {second = second * 0.9; constsecond = constsecond * 0.9; constturbosecond = constturbosecond * 0.9; xs++}
+  if (sneklength == '30' && xs === undefined) {gamespeedfieldpersecond = gamespeedfieldpersecond * 1.2; xs = 1}
+  if (sneklength == '60' && xs === 1) {gamespeedfieldpersecond = gamespeedfieldpersecond * 1.2;  xs++}
+  if (sneklength == '90' && xs === 2) {gamespeedfieldpersecond = gamespeedfieldpersecond * 1.10;  xs++}
   gamespeed = second / gamespeedfieldpersecond;
-  document.getElementById('gamespeedcurrent').innerHTML = gamespeedfieldpersecond + " Felder pro Sekunde";
+  if (gamespeedfieldpersecond <= 0) {document.getElementById('gamespeedcurrent').innerHTML = "ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM"} else {
+  document.getElementById('gamespeedcurrent').innerHTML = gamespeedfieldpersecond + " Felder pro Sekunde";}
   timedID = setInterval(timed, gamespeed);
 }
 
@@ -124,8 +115,8 @@ verkackt();
 document.getElementById(headposnew).classList.add('snakehead');
 }
 
-function rngx() { numx = Math.floor(Math.random() * 15+1);}
-function rngy() { numy = Math.floor(Math.random() * 15+1);}
+function rngx() { numx = Math.floor(Math.random() * 50+1);}
+function rngy() { numy = Math.floor(Math.random() * 50+1);}
 function foodfunky() {
 rngy();
 rngx();
@@ -149,6 +140,6 @@ if (document.getElementById(headposnew).classList.contains('snakebody') === true
 
 }
 function verkackt() {
-if (hy == 'z0' || hy === 'z16' || hx == 's0' || hx === 's16') {alert('Verloren');location.reload();} 
+if (hy == 'z0' || hy === 'z51' || hx == 's0' || hx === 's51') {alert('Verloren');location.reload();} 
 if (sneklength >= 120) {alert('You are winner')}
 } 
