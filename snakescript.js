@@ -55,8 +55,8 @@ function startgame() {
 
 document.addEventListener('keydown', boost);
 document.addEventListener('keyup', unboost);
-function   boost(event) {if (event.key === 'Shift') {speedup = '1'}}
-function unboost(event) {if (event.key === 'Shift') {speedup = '0'}}
+function   boost(event) {if (event.keyCode === 16) {speedup = '1'}}
+function unboost(event) {if (event.key === 'Shift') {speedup = '0';}}
 
 function gameSpeed(dorito) {
   clearInterval(timedID)
