@@ -20,7 +20,7 @@ let numy
 let sneklength = 29
 let Up = 1, Left = 0, Right = 0, Down = 0;
 let movetime = 0
-let gamespeed = 200;
+let gamespeed = 100;
 let gamespeedfieldpersecond = 1000 / gamespeed;
 let gamestarted = 0;
 let second = 1000;
@@ -58,7 +58,7 @@ function gameSpeed(dorito) {
   if (sneklength == '60' && xs === 1) {gamespeedfieldpersecond = gamespeedfieldpersecond * 1.2;  xs++}
   if (sneklength == '90' && xs === 2) {gamespeedfieldpersecond = gamespeedfieldpersecond * 1.10;  xs++}
   gamespeed = second / gamespeedfieldpersecond;
-  if (gamespeedfieldpersecond <= 0) {document.getElementById('gamespeedcurrent').innerHTML = "ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM"} else {
+  if (gamespeedfieldpersecond <= 0) {document.getElementById('gamespeedcurrent').innerHTML = "ZOOOOOOOOOOOOOM"} else {
   document.getElementById('gamespeedcurrent').innerHTML = gamespeedfieldpersecond + " Felder pro Sekunde";}
   timedID = setInterval(timed, gamespeed);
 }
